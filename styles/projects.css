@@ -1,0 +1,1230 @@
+/* ==========================================================
+                    PROJECT SECTION
+========================================================== */
+
+.projects-section{
+
+    padding:120px 8%;
+
+    background:#ffffff;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+/* ==========================================================
+                    HEADER
+========================================================== */
+
+.projects-header{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.projects-header h2{
+
+    font-size:3rem;
+
+    color:#111827;
+
+    margin-bottom:18px;
+
+    font-weight:700;
+
+}
+
+.projects-header p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:#6b7280;
+
+    font-size:1.08rem;
+
+    line-height:1.9;
+
+}
+
+/* ==========================================================
+                    CAROUSEL
+========================================================== */
+
+.projects-carousel{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:35px;
+
+    position:relative;
+
+}
+
+/* ==========================================================
+                    NAV BUTTONS
+========================================================== */
+
+.carousel-btn{
+
+    width:62px;
+
+    height:62px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#2563eb;
+
+    cursor:pointer;
+
+    font-size:1.3rem;
+
+    transition:.35s;
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,.08);
+
+    flex-shrink:0;
+
+}
+
+.carousel-btn:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 18px 35px rgba(37,99,235,.25);
+
+}
+
+/* ==========================================================
+                    SLIDER
+========================================================== */
+
+.projects-slider{
+
+    width:100%;
+
+    max-width:1150px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.slider-track{
+
+    display:flex;
+
+    width:100%;
+
+    transition:transform .7s cubic-bezier(.22,.61,.36,1);
+
+    will-change:transform;
+
+}
+
+/* ==========================================================
+                    LAPTOP CONTAINER
+========================================================== */
+
+.laptop-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    perspective:1500px;
+
+}
+
+/* ==========================================================
+                    LAPTOP
+========================================================== */
+
+.laptop{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:580px;
+
+    transition:.45s;
+
+    transform-style:preserve-3d;
+
+}
+
+/* ==========================================================
+                    SCREEN
+========================================================== */
+
+.laptop-screen{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+}
+
+/* Screenshot */
+
+.laptop-screen img{
+
+    width:100%;
+
+    display:block;
+
+    user-select:none;
+
+    pointer-events:none;
+
+}
+
+/* ==========================================================
+                    SCREEN REFLECTION
+========================================================== */
+
+.screen-reflection{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+/* ==========================================================
+                    LAPTOP BASE
+========================================================== */
+
+.laptop-base{
+
+    position:relative;
+
+    margin:auto;
+
+}
+
+/* ==========================================================
+                    PROJECT INFO
+========================================================== */
+
+.project-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.project-category{
+
+    display:inline-flex;
+
+    width:max-content;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.project-info h3{
+
+    font-size:2.5rem;
+
+    color:#111827;
+
+    margin-bottom:22px;
+
+    line-height:1.2;
+
+}
+
+.project-info p{
+
+    color:#6b7280;
+
+    line-height:1.9;
+
+    margin-bottom:32px;
+
+    font-size:1rem;
+
+}
+
+/* ==========================================================
+                    TECH STACK
+========================================================== */
+
+.tech-stack{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    margin-bottom:40px;
+
+}
+
+.tech-stack span{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    background:#f8fafc;
+
+    border:2px solid #e5e7eb;
+
+    color:#374151;
+
+    font-size:.92rem;
+
+    transition:.3s;
+
+}
+
+.tech-stack span:hover{
+
+    background:#2563eb;
+
+    border-color:#2563eb;
+
+    color:white;
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================================================
+                    BUTTONS
+========================================================== */
+
+.project-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.project-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px 28px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.project-btn.live{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.project-btn.live:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.project-btn.github{
+
+    border:2px solid #2563eb;
+
+    color:#2563eb;
+
+}
+
+.project-btn.github:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+/* ==========================================================
+                    INDICATORS
+========================================================== */
+
+.carousel-indicators{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:14px;
+
+    margin-top:45px;
+
+}
+
+.indicator{
+
+    width:13px;
+
+    height:13px;
+
+    border-radius:50%;
+
+    background:#d1d5db;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.indicator.active{
+
+    width:42px;
+
+    border-radius:30px;
+
+    background:#2563eb;
+
+}
+
+/* ==========================================================
+                    PREMIUM LAPTOP DESIGN
+========================================================== */
+
+/* Laptop Body */
+
+.laptop{
+
+    position:relative;
+
+    border-radius:20px;
+
+    transform-style:preserve-3d;
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+
+}
+
+/* Floating */
+
+.laptop:hover{
+
+    transform:
+        translateY(-12px)
+        rotateX(5deg)
+        rotateY(-5deg);
+
+}
+
+/* ==========================================================
+                    SCREEN FRAME
+========================================================== */
+
+.laptop-screen{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    border:12px solid #202124;
+
+    background:#000;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.22),
+        0 5px 15px rgba(0,0,0,.08);
+
+}
+
+/* Camera */
+
+.laptop-screen::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:6px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:#454545;
+
+    z-index:5;
+
+}
+
+/* Camera Lens */
+
+.laptop-screen::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:8px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:#777;
+
+    z-index:6;
+
+}
+
+/* ==========================================================
+                    SCREENSHOT
+========================================================== */
+
+.laptop-screen img{
+
+    width:100%;
+
+    display:block;
+
+    transition:
+        transform .8s ease;
+
+}
+
+.laptop:hover img{
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================================================
+                    SCREEN REFLECTION
+========================================================== */
+
+.screen-reflection{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            transparent 10%,
+            rgba(255,255,255,.16) 30%,
+            transparent 55%
+        );
+
+    transform:translateX(-140%);
+
+    pointer-events:none;
+
+}
+
+.laptop:hover .screen-reflection{
+
+    animation:reflectionMove 1.3s ease;
+
+}
+
+@keyframes reflectionMove{
+
+    from{
+
+        transform:translateX(-140%);
+
+    }
+
+    to{
+
+        transform:translateX(140%);
+
+    }
+
+}
+
+/* ==========================================================
+                    LAPTOP BASE
+========================================================== */
+
+.laptop-base{
+
+    width:100%;
+
+    height:22px;
+
+    margin:auto;
+
+    margin-top:-2px;
+
+    transform:none;
+
+    background:
+
+        linear-gradient(
+
+            to bottom,
+
+            #d9d9d9,
+
+            #a7a7a7
+
+        );
+
+    border-radius:
+
+        0 0 24px 24px;
+
+    box-shadow:
+
+        inset 0 2px 0 rgba(255,255,255,.8),
+
+        0 18px 25px rgba(0,0,0,.18);
+
+    position:relative;
+
+}
+
+/* Trackpad */
+
+.laptop-base::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:5px;
+
+    transform:translateX(-50%);
+
+    width:110px;
+
+    height:9px;
+
+    border-radius:20px;
+
+    background:
+
+        rgba(120,120,120,.55);
+
+}
+
+/* Bottom Shadow */
+
+.laptop-base::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:-22px;
+
+    width:90%;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:
+
+        rgba(0,0,0,.14);
+
+    filter:blur(12px);
+
+}
+
+/* ==========================================================
+                    SCREEN GLOW
+========================================================== */
+
+.laptop::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-20px;
+
+    border-radius:28px;
+
+    background:
+
+        radial-gradient(
+
+            rgba(37,99,235,.12),
+
+            transparent 70%
+
+        );
+
+    opacity:0;
+
+    transition:.45s;
+
+    z-index:-1;
+
+}
+
+.laptop:hover::before{
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+                    CATEGORY TAG
+========================================================== */
+
+.project-category{
+
+    box-shadow:
+
+        0 8px 18px rgba(37,99,235,.15);
+
+}
+
+/* ==========================================================
+                    BUTTONS
+========================================================== */
+
+.project-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.project-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:70%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255,255,255,.35),
+
+            transparent
+
+        );
+
+    transition:.6s;
+
+}
+
+.project-btn:hover::before{
+
+    left:150%;
+
+}
+
+/* ==========================================================
+                    TECH STACK
+========================================================== */
+
+.tech-stack span{
+
+    box-shadow:
+
+        0 5px 12px rgba(0,0,0,.05);
+
+}
+
+/* ==========================================================
+                    PROJECT INFO
+========================================================== */
+
+.project-info{
+
+    animation:fadeSlide .8s ease;
+
+}
+
+@keyframes fadeSlide{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+                    ACTIVE SLIDE
+========================================================== */
+
+/* .project-slide{
+
+    min-width:100%;
+
+    flex-shrink:0;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:70px;
+
+    min-height:620px;
+
+    opacity:1;
+
+}
+    */
+
+.project-slide{
+
+    flex:0 0 100%;
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+
+    gap:60px;
+
+    box-sizing:border-box;
+
+    align-items:center;
+}
+
+/* ==========================================================
+                    HOVER EFFECTS
+========================================================== */
+
+.project-slide:hover .project-info h3{
+
+    color:#2563eb;
+
+    transition:.35s;
+
+}
+
+.project-slide:hover .project-category{
+
+    transform:translateY(-3px);
+
+}
+
+.project-slide:hover .tech-stack span{
+
+    border-color:#2563eb33;
+
+}
+
+/* ==========================================================
+                    INDICATOR HOVER
+========================================================== */
+
+.indicator:hover{
+
+    background:#2563eb;
+
+    transform:scale(1.15);
+
+}
+
+/* ==========================================================
+                    NAVIGATION BUTTONS
+========================================================== */
+
+.carousel-btn{
+
+    user-select:none;
+
+    z-index:20;
+
+}
+
+.carousel-btn:active{
+
+    transform:scale(.92);
+
+}
+
+/* ==========================================================
+                    PROJECT IMAGE
+========================================================== */
+
+.laptop-screen{
+
+    cursor:pointer;
+
+}
+
+.laptop-screen img{
+
+    transition:
+        transform .8s ease,
+        filter .5s ease;
+
+}
+
+.laptop:hover .laptop-screen img{
+
+    filter:brightness(1.05);
+
+}
+
+/* ==========================================================
+                    FADE IN
+========================================================== */
+
+.projects-header{
+
+    animation:fadeTop .9s ease;
+
+}
+
+@keyframes fadeTop{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+                    RESPONSIVE
+========================================================== */
+
+@media(max-width:1200px){
+
+    .project-slide{
+
+        gap:45px;
+
+    }
+
+}
+
+@media(max-width:992px){
+
+    .projects-section{
+
+        padding:90px 6%;
+
+    }
+
+    .projects-header h2{
+
+        font-size:2.5rem;
+
+    }
+
+    .project-slide{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+        text-align:center;
+
+    }
+
+    .project-category{
+
+        margin:auto;
+
+        margin-bottom:20px;
+
+    }
+
+    .project-buttons{
+
+        justify-content:center;
+
+    }
+
+    .tech-stack{
+
+        justify-content:center;
+
+    }
+
+    .laptop{
+
+        max-width:560px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .projects-header h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .projects-header p{
+
+        font-size:.95rem;
+
+    }
+
+    .carousel-btn{
+
+        width:52px;
+
+        height:52px;
+
+        font-size:1rem;
+
+    }
+
+    .project-info h3{
+
+        font-size:2rem;
+
+    }
+
+    .laptop{
+
+        max-width:460px;
+
+    }
+
+    .tech-stack span{
+
+        padding:8px 14px;
+
+        font-size:.85rem;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .projects-carousel{
+
+        gap:15px;
+
+    }
+
+    .carousel-btn{
+
+        position:absolute;
+
+        top:45%;
+
+        transform:translateY(-50%);
+
+    }
+
+    .prev{
+
+        left:-5px;
+
+    }
+
+    .next{
+
+        right:-5px;
+
+    }
+
+    .project-slide{
+
+        min-height:auto;
+
+    }
+
+    .project-info h3{
+
+        font-size:1.8rem;
+
+    }
+
+    .project-buttons{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .project-btn{
+
+        width:220px;
+
+        justify-content:center;
+
+    }
+
+    .laptop{
+
+        max-width:100%;
+
+    }
+
+}
+
+@media(max-width:450px){
+
+    .projects-section{
+
+        padding:80px 20px;
+
+    }
+
+    .projects-header h2{
+
+        font-size:2rem;
+
+    }
+
+    .projects-header p{
+
+        font-size:.9rem;
+
+    }
+
+    .project-info p{
+
+        font-size:.95rem;
+
+    }
+
+    .carousel-indicators{
+
+        margin-top:30px;
+
+    }
+
+    .indicator{
+
+        width:10px;
+
+        height:10px;
+
+    }
+
+    .indicator.active{
+
+        width:35px;
+
+    }
+
+}

@@ -1,0 +1,430 @@
+/* ===========================
+   CONTACT SECTION
+=========================== */
+
+.contact-section{
+    padding:40px 8%;
+    background:#ffffff;
+}
+
+.contact-heading{
+
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.contact-heading h2{
+
+    font-size:3rem;
+    color:#111827;
+    margin-bottom:15px;
+}
+
+.contact-heading p{
+
+    font-size:1.05rem;
+    color:#6b7280;
+
+    max-width:720px;
+    margin:auto;
+
+    line-height:1.8;
+}
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.contact-wrapper{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+/* ===========================
+   LEFT CONTENT
+=========================== */
+
+.contact-left h3{
+
+    font-size:2rem;
+
+    margin-bottom:18px;
+
+    color:#111827;
+}
+
+.contact-left p{
+
+    color:#6b7280;
+
+    line-height:1.9;
+
+    margin-bottom:40px;
+}
+
+/* ===========================
+   CONTACT CARDS
+=========================== */
+
+.contact-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:22px;
+}
+
+.contact-card{
+
+    background:#ffffff;
+
+    border:2px solid #e5e7eb;
+
+    border-radius:20px;
+
+    padding:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
+
+.contact-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#2563eb;
+
+    box-shadow:0 18px 40px rgba(37,99,235,.18);
+}
+
+.contact-card i{
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:1.6rem;
+
+    transition:.35s;
+}
+
+.contact-card:hover i{
+
+    transform:rotate(8deg) scale(1.1);
+
+    background:#2563eb;
+
+    color:white;
+}
+
+.contact-info h4{
+
+    color:#111827;
+
+    margin-bottom:6px;
+
+    font-size:1rem;
+}
+
+.contact-info span{
+
+    color:#6b7280;
+
+    font-size:.95rem;
+
+    word-break:break-word;
+}
+
+/* ===========================
+   RIGHT SIDE
+=========================== */
+
+.contact-right{
+
+    display:flex;
+
+    justify-content:center;
+}
+
+/* ===========================
+   CTA CARD
+=========================== */
+
+.cta-card{
+
+    width:100%;
+
+    max-width:430px;
+
+    background:white;
+
+    border-radius:28px;
+
+    border:2px solid #e5e7eb;
+
+    padding:45px;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.08);
+
+    text-align:center;
+
+    transition:.35s;
+}
+
+.cta-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 28px 60px rgba(37,99,235,.16);
+}
+
+.cta-icon{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    background:#eff6ff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#2563eb;
+
+    font-size:2.5rem;
+}
+
+.cta-card h3{
+
+    color:#111827;
+
+    font-size:1.8rem;
+
+    margin-bottom:15px;
+}
+
+.cta-card p{
+
+    color:#6b7280;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.contact-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+}
+
+.contact-btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+    padding:16px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.35s;
+}
+
+.contact-btn.primary{
+
+    background:#2563eb;
+
+    color:white;
+}
+
+.contact-btn.primary:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 30px rgba(37,99,235,.28);
+}
+
+.contact-btn.secondary{
+
+    border:2px solid #2563eb;
+
+    color:#2563eb;
+}
+
+.contact-btn.secondary:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+    transform:translateY(-4px);
+}
+
+/* ===========================
+   SOCIAL ICONS
+=========================== */
+
+.social-links{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+}
+
+.social-links a{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#2563eb;
+
+    background:#eff6ff;
+
+    text-decoration:none;
+
+    font-size:1.3rem;
+
+    transition:.35s;
+}
+
+.social-links a:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+    transform:translateY(-6px) scale(1.08);
+
+    box-shadow:0 10px 28px rgba(37,99,235,.25);
+}
+
+/* ===========================
+   SCROLL ANIMATION
+=========================== */
+
+.hidden-contact{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:all .9s ease;
+}
+
+.show-contact{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1100px){
+
+    .contact-wrapper{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+    }
+
+    .contact-right{
+
+        order:-1;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .contact-heading h2{
+
+        font-size:2.4rem;
+    }
+
+    .contact-cards{
+
+        grid-template-columns:1fr;
+    }
+
+    .cta-card{
+
+        padding:35px 25px;
+    }
+
+    .contact-buttons{
+
+        gap:14px;
+    }
+
+}

@@ -1,0 +1,176 @@
+.skills-section{
+    padding:40px 0;
+    text-align:center;
+}
+
+.skills-section h2{
+    font-size:3rem;
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+
+.skills-subtitle{
+    color:#bfbfbf;
+    margin-bottom:60px;
+}
+
+.orbit-container{
+
+    width:700px;
+    height:700px;
+
+    margin:auto;
+
+    position:relative;
+}
+
+.center-circle{
+
+    position:absolute;
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:130px;
+    height:130px;
+
+    border-radius:50%;
+
+    background:white;
+
+    border:5px solid #2563eb;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:2rem;
+    font-weight:bold;
+
+    color:#2563eb;
+
+    box-shadow:0 10px 30px rgba(37,99,235,.25);
+}
+
+.orbit{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border:2px dashed #cbd5e1;
+    border-radius:50%;
+    pointer-events: none;
+}
+
+.orbit1{
+
+    width:260px;
+    height:260px;
+
+    animation:rotateClockwise 18s linear infinite;
+}
+
+.orbit2{
+
+    width:420px;
+    height:420px;
+
+    animation:rotateAnti 25s linear infinite;
+}
+
+.orbit3{
+
+    width:600px;
+    height:600px;
+
+    animation:rotateClockwise 35s linear infinite;
+}
+
+.skill{
+
+    position:absolute;
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    background:white;
+
+    border:2px solid #dbe4ee;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:2.2rem;
+
+    transition:.35s;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    pointer-events: auto;
+}
+
+.skill:hover{
+
+    transform:scale(1.25);
+
+    border-color:#2563eb;
+
+    box-shadow:0 10px 30px rgba(37,99,235,.25);
+}
+
+.skill::after{
+
+    content:attr(data-name);
+
+    position:absolute;
+
+    bottom:-38px;
+
+    background:#111;
+
+    color:white;
+
+    padding:5px 10px;
+
+    border-radius:6px;
+
+    opacity:0;
+
+    transition:.3s;
+
+    white-space:nowrap;
+
+    font-size:.8rem;
+}
+
+.skill:hover::after{
+
+    opacity:1;
+}
+
+@keyframes rotateClockwise{
+
+    from{
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+
+    to{
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+
+}
+
+@keyframes rotateAnti{
+
+    from{
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+
+    to{
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+
+}

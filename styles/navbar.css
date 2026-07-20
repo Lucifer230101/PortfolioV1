@@ -1,0 +1,33 @@
+.mainNav{
+    background: #333;
+    padding: 10px 20px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    height: 60px;
+    z-index: 10;
+}
+
+.mainNav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.mainNav li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.mainNav li a:hover{
+    color: #ff9800;
+}
