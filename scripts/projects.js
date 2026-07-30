@@ -1,500 +1,217 @@
-/* ==========================================================
-                    PROJECTS SECTION
-========================================================== */
+const projects = [
 
-let currentProject = 0;
+{
+    category: "Personal Portfolio",
 
-let projectSlides = [];
-let sliderTrack = null;
+    title: "Portfolio Website",
 
-let indicators = [];
+    image: "images/projects/portfolio.png",
 
-let prevButton = null;
-let nextButton = null;
+    description:
+    "A modern developer portfolio built using HTML, CSS and JavaScript with smooth animations, responsive layouts, premium UI and reusable components.",
 
-let totalProjects = 0;
+    tech: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Responsive",
+        "Animations"
+    ],
 
-/* ==========================================================
-                    INITIALIZE
-========================================================== */
+    buttons: [
+        {
+            text: "Live Demo",
+            icon: "fa-arrow-up-right-from-square",
+            class: "live",
+            link: "https://portfolio-v1-eta-five.vercel.app/"
+        },
+        {
+            text: "GitHub",
+            icon: "fa-github",
+            class: "github",
+            link: "https://github.com/Lucifer230101/PortfolioV1"
+        }
+    ]
+},
+
+{
+    category: "Enterprise Interactive Showcase",
+
+    title: "Thermax Interactive Product Showcase",
+
+    image: "images/projects/ThermaxPPT.png",
+
+    description:
+    "Developed an enterprise-grade interactive product showcase for Thermax using HTML, CSS and JavaScript featuring videos, PDFs, image galleries and interactive 3D product models. Successfully used during a major Asian industry conference and appreciated by the client.",
+
+    tech: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "3D Models",
+        "Videos",
+        "PDF Viewer"
+    ],
+
+    buttons: [
+        {
+            text: "Preview",
+            icon: "fa-image",
+            class: "live",
+            link: "images/projects/ThermaxPPT.png"
+        },
+        {
+            text: "Enterprise",
+            icon: "fa-building",
+            class: "disabled"
+        }
+    ]
+}
+
+];
 
 function initializeProjects(){
 
-    sliderTrack = document.querySelector(".slider-track");
+    const track=document.getElementById("sliderTrack");
 
-    if(!sliderTrack){
+    const indicators=document.getElementById("carouselIndicators");
 
-        return;
+    let current=0;
 
-    }
+    track.innerHTML="";
 
-    projectSlides = Array.from(
+    indicators.innerHTML="";
 
-        document.querySelectorAll(".project-slide")
+    projects.forEach((project,index)=>{
 
-    );
+        track.innerHTML+=`
 
-    prevButton = document.querySelector(".carousel-btn.prev");
+<div class="project-slide">
 
-    nextButton = document.querySelector(".carousel-btn.next");
+<div class="laptop-container">
 
-    totalProjects = projectSlides.length;
+<div class="laptop">
 
-    createIndicators();
+<div class="laptop-screen">
 
-    updateCarousel(false);
+<img src="${project.image}" alt="${project.title}">
 
-    attachButtonEvents();
+<div class="screen-reflection"></div>
 
-    attachKeyboardEvents();
+</div>
 
-    initializeProjectExtras();
+<div class="laptop-base"></div>
 
-}
+</div>
 
-/* ==========================================================
-                    CREATE INDICATORS
-========================================================== */
+</div>
 
-function createIndicators(){
+<div class="project-info">
 
-    const container = document.querySelector(
+<span class="project-category">
 
-        ".carousel-indicators"
+${project.category}
 
-    );
+</span>
 
-    if(!container){
+<h3>${project.title}</h3>
 
-        return;
+<p>${project.description}</p>
 
-    }
+<div class="tech-stack">
 
-    container.innerHTML = "";
+${project.tech.map(t=>`<span>${t}</span>`).join("")}
 
-    indicators = [];
+</div>
 
-    for(let i = 0; i < totalProjects; i++){
+<div class="project-buttons">
 
-        const dot = document.createElement("span");
+${project.buttons.map(btn=>{
 
-        dot.className = "indicator";
+if(btn.class==="disabled"){
 
-        if(i === currentProject){
+return`
 
-            dot.classList.add("active");
+<a class="project-btn disabled">
 
-        }
+<i class="fa-solid ${btn.icon}"></i>
 
-        dot.addEventListener("click",()=>{
+${btn.text}
 
-            goToProject(i);
-
-        });
-
-        container.appendChild(dot);
-
-        indicators.push(dot);
-
-    }
+</a>`;
 
 }
 
-/* ==========================================================
-                    UPDATE
-========================================================== */
+return`
 
-function updateCarousel(animate = true){
+<a href="${btn.link}"
 
-    if(!sliderTrack){
+target="_blank"
 
-        return;
+rel="noopener noreferrer"
 
-    }
+class="project-btn ${btn.class}">
 
-    if(!animate){
+<i class="fa-solid ${btn.icon}"></i>
 
-        sliderTrack.style.transition = "none";
+${btn.text}
 
-    }else{
+</a>`;
 
-        sliderTrack.style.transition =
+}).join("")}
 
-            "transform .7s cubic-bezier(.22,.61,.36,1)";
+</div>
 
-    }
+</div>
 
-    sliderTrack.style.transform =
+</div>
 
-        `translateX(-${currentProject * 100}%)`;
+`;
 
-    requestAnimationFrame(()=>{
-
-        sliderTrack.style.transition =
-
-            "transform .7s cubic-bezier(.22,.61,.36,1)";
+        indicators.innerHTML+=`<span class="indicator ${index==0?"active":""}"></span>`;
 
     });
 
-    indicators.forEach((indicator,index)=>{
+    const slides=document.querySelectorAll(".project-slide");
 
-        indicator.classList.toggle(
+    const dots=document.querySelectorAll(".indicator");
 
-            "active",
+    function update(){
 
-            index === currentProject
+        track.style.transform=`translateX(-${current*100}%)`;
 
-        );
+        dots.forEach(d=>d.classList.remove("active"));
 
-    });
-
-}
-
-/* ==========================================================
-                    NAVIGATION
-========================================================== */
-
-function nextProject(){
-
-    currentProject++;
-
-    if(currentProject >= totalProjects){
-
-        currentProject = 0;
+        dots[current].classList.add("active");
 
     }
 
-    updateCarousel();
+    document.querySelector(".next").onclick=()=>{
 
-}
+        current=(current+1)%slides.length;
 
-function previousProject(){
+        update();
 
-    currentProject--;
+    };
 
-    if(currentProject < 0){
+    document.querySelector(".prev").onclick=()=>{
 
-        currentProject = totalProjects - 1;
+        current=(current-1+slides.length)%slides.length;
 
-    }
+        update();
 
-    updateCarousel();
+    };
 
-}
+    dots.forEach((dot,index)=>{
 
-function goToProject(index){
+        dot.onclick=()=>{
 
-    currentProject = index;
+            current=index;
 
-    updateCarousel();
-
-}
-
-/* ==========================================================
-                    BUTTON EVENTS
-========================================================== */
-
-function attachButtonEvents(){
-
-    if(prevButton){
-
-        prevButton.addEventListener(
-
-            "click",
-
-            previousProject
-
-        );
-
-    }
-
-    if(nextButton){
-
-        nextButton.addEventListener(
-
-            "click",
-
-            nextProject
-
-        );
-
-    }
-
-}
-
-/* ==========================================================
-                    KEYBOARD
-========================================================== */
-
-function attachKeyboardEvents(){
-
-    document.addEventListener(
-
-        "keydown",
-
-        function(event){
-
-            if(event.key === "ArrowRight"){
-
-                nextProject();
-
-            }
-
-            if(event.key === "ArrowLeft"){
-
-                previousProject();
-
-            }
-
-        }
-
-    );
-
-}
-
-/* ==========================================================
-                    AUTOPLAY
-========================================================== */
-
-let autoPlay = null;
-
-function startAutoPlay(){
-
-    stopAutoPlay();
-
-    autoPlay = setInterval(() => {
-
-        nextProject();
-
-    }, 5000);
-
-}
-
-function stopAutoPlay(){
-
-    if(autoPlay){
-
-        clearInterval(autoPlay);
-
-    }
-
-}
-
-/* ==========================================================
-                    PAUSE ON HOVER
-========================================================== */
-
-function attachHoverEvents(){
-
-    const section = document.querySelector(".projects-section");
-
-    if(!section){
-
-        return;
-
-    }
-
-    section.addEventListener("mouseenter", () => {
-
-        stopAutoPlay();
-
-    });
-
-    section.addEventListener("mouseleave", () => {
-
-        startAutoPlay();
-
-    });
-
-}
-
-/* ==========================================================
-                    TOUCH SWIPE
-========================================================== */
-
-function attachTouchEvents(){
-
-    const slider = document.querySelector(".projects-slider");
-
-    if(!slider){
-
-        return;
-
-    }
-
-    let startX = 0;
-
-    let endX = 0;
-
-    slider.addEventListener("touchstart",(e)=>{
-
-        startX = e.touches[0].clientX;
-
-    });
-
-    slider.addEventListener("touchmove",(e)=>{
-
-        endX = e.touches[0].clientX;
-
-    });
-
-    slider.addEventListener("touchend",()=>{
-
-        const distance = startX - endX;
-
-        if(Math.abs(distance) < 60){
-
-            return;
-
-        }
-
-        if(distance > 0){
-
-            nextProject();
-
-        }else{
-
-            previousProject();
+            update();
 
         }
 
     });
-
-}
-
-/* ==========================================================
-                    MOUSE DRAG
-========================================================== */
-
-function attachMouseDrag(){
-
-    const slider = document.querySelector(".projects-slider");
-
-    if(!slider){
-
-        return;
-
-    }
-
-    let isDragging = false;
-
-    let startX = 0;
-
-    slider.addEventListener("mousedown",(e)=>{
-
-        isDragging = true;
-
-        startX = e.clientX;
-
-        slider.style.cursor = "grabbing";
-
-    });
-
-    window.addEventListener("mouseup",(e)=>{
-
-        if(!isDragging){
-
-            return;
-
-        }
-
-        isDragging = false;
-
-        slider.style.cursor = "grab";
-
-        const distance = e.clientX - startX;
-
-        if(Math.abs(distance) < 60){
-
-            return;
-
-        }
-
-        if(distance < 0){
-
-            nextProject();
-
-        }else{
-
-            previousProject();
-
-        }
-
-    });
-
-}
-
-/* ==========================================================
-                    LAPTOP TILT
-========================================================== */
-
-function attachLaptopTilt(){
-
-    const laptops = document.querySelectorAll(".laptop");
-
-    laptops.forEach((laptop)=>{
-
-        laptop.addEventListener("mousemove",(e)=>{
-
-            const rect = laptop.getBoundingClientRect();
-
-            const x = e.clientX - rect.left;
-
-            const y = e.clientY - rect.top;
-
-            const rotateY = ((x / rect.width) - 0.5) * 14;
-
-            const rotateX = ((y / rect.height) - 0.5) * -14;
-
-            laptop.style.transform =
-
-                `perspective(1200px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 translateY(-10px)`;
-
-        });
-
-        laptop.addEventListener("mouseleave",()=>{
-
-            laptop.style.transform = "";
-
-        });
-
-    });
-
-}
-
-/* ==========================================================
-                    RESIZE
-========================================================== */
-
-function attachResizeHandler(){
-
-    window.addEventListener("resize",()=>{
-
-        updateCarousel(false);
-
-    });
-
-}
-
-/* ==========================================================
-                    INITIALIZE EXTRA FEATURES
-========================================================== */
-
-function initializeProjectExtras(){
-
-    attachHoverEvents();
-
-    attachTouchEvents();
-
-    attachMouseDrag();
-
-    attachLaptopTilt();
-
-    attachResizeHandler();
-
-    startAutoPlay();
 
 }
