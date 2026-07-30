@@ -1,43 +1,38 @@
 function initializeSkills() {
 
-    const rings = [
+    const cards = document.querySelectorAll(".skill-card");
 
-        {
-            selector: ".orbit1",
-            radius: 130
+    if (!cards.length) return;
+
+    const observer = new IntersectionObserver(
+
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
         },
 
         {
-            selector: ".orbit2",
-            radius: 210
-        },
-
-        {
-            selector: ".orbit3",
-            radius: 300
+            threshold: 0.15
         }
 
-    ];
+    );
 
-    rings.forEach(ring => {
+    cards.forEach((card, index) => {
 
-        const orbit = document.querySelector(ring.selector);
+        card.style.transitionDelay = `${index * 120}ms`;
 
-        const skills = orbit.querySelectorAll(".skill");
-
-        const angle = (Math.PI * 2) / skills.length;
-
-        skills.forEach((skill, index) => {
-
-            const x = Math.cos(angle * index) * ring.radius;
-
-            const y = Math.sin(angle * index) * ring.radius;
-
-            skill.style.left = `calc(50% + ${x}px - 35px)`;
-
-            skill.style.top = `calc(50% + ${y}px - 35px)`;
-
-        });
+        observer.observe(card);
 
     });
 

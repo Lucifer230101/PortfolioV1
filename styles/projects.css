@@ -1021,13 +1021,14 @@
 
     .projects-section{
 
-        padding:90px 6%;
+        padding:10px 6%;
 
     }
 
     .projects-header h2{
 
         font-size:2.5rem;
+        margin: 1rem 0rem;
 
     }
 

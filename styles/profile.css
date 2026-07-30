@@ -58,12 +58,10 @@
 }
 
 .profile-photo {
-  flex: 1;
   display: flex;
-  align-self: flex-start;
-  margin-top: 60px;
   justify-content: center;
   align-items: center;
+  transform: translateY(-35px);
 }
 
 .profile-photo img {
@@ -91,6 +89,17 @@
   .profile-container {
     flex-direction: column-reverse;
     text-align: center;
+    gap: 20px;
+  }
+
+  .profile-photo {
+
+    transform: translateY(10px);
+
+  }
+
+  .profile-info h2 {
+    margin: 1rem 0rem;
   }
 
   .about-details {
