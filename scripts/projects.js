@@ -1,92 +1,180 @@
 const projects = [
 
-{
-    category: "Personal Portfolio",
+    {
+        layout: "laptop",
 
-    title: "Portfolio Website",
+        category: "Personal Portfolio",
 
-    image: "images/projects/portfolio.png",
+        title: "Portfolio Website",
 
-    description:
-    "A modern developer portfolio built using HTML, CSS and JavaScript with smooth animations, responsive layouts, premium UI and reusable components.",
+        image: "images/projects/portfolio.png",
 
-    tech: [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Responsive",
-        "Animations"
-    ],
+        description:
+            "A modern developer portfolio built using HTML, CSS and JavaScript with smooth animations, responsive layouts, premium UI and reusable components.",
 
-    buttons: [
-        {
-            text: "Live Demo",
-            icon: "fa-arrow-up-right-from-square",
-            class: "live",
-            link: "https://portfolio-v1-eta-five.vercel.app/"
-        },
-        {
-            text: "GitHub",
-            icon: "fa-github",
-            class: "github",
-            link: "https://github.com/Lucifer230101/PortfolioV1"
-        }
-    ]
-},
+        tech: [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "Responsive",
+            "Animations"
+        ],
 
-{
-    category: "Enterprise Interactive Showcase",
+        buttons: [
+            {
+                text: "Live Demo",
+                icon: "fa-arrow-up-right-from-square",
+                class: "live",
+                link: "https://portfolio-v1-eta-five.vercel.app/"
+            },
+            {
+                text: "GitHub",
+                icon: "fa-github",
+                class: "github",
+                link: "https://github.com/Lucifer230101/PortfolioV1"
+            }
+        ]
+    },
 
-    title: "Thermax Interactive Product Showcase",
+    {
+        layout: "laptop",
 
-    image: "images/projects/ThermaxPPT.png",
+        category: "Enterprise Interactive Showcase",
 
-    description:
-    "Developed an enterprise-grade interactive product showcase for Thermax using HTML, CSS and JavaScript featuring videos, PDFs, image galleries and interactive 3D product models. Successfully used during a major Asian industry conference and appreciated by the client.",
+        title: "Thermax Interactive Product Showcase",
 
-    tech: [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "3D Models",
-        "Videos",
-        "PDF Viewer"
-    ],
+        image: "images/projects/ThermaxPPT.png",
 
-    buttons: [
-        {
-            text: "Preview",
-            icon: "fa-image",
-            class: "live",
-            link: "images/projects/ThermaxPPT.png"
-        },
-        {
-            text: "Enterprise",
-            icon: "fa-building",
-            class: "disabled"
-        }
-    ]
-}
+        description:
+            "Developed an enterprise-grade interactive product showcase for Thermax using HTML, CSS and JavaScript featuring videos, PDFs, image galleries and interactive 3D product models. Successfully used during a major Asian industry conference and appreciated by the client.",
 
+        tech: [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "3D Models",
+            "Videos",
+            "PDF Viewer"
+        ],
+
+        buttons: [
+            {
+                text: "Preview",
+                icon: "fa-image",
+                class: "live",
+                link: "images/projects/ThermaxPPT.png"
+            },
+            {
+                text: "Enterprise",
+                icon: "fa-building",
+                class: "disabled"
+            }
+        ]
+    },
+
+    {
+        layout: "code",
+
+        category: "Java Desktop Application",
+
+        title: "ATM Banking Simulator",
+
+        description:
+            "Developed a desktop banking application in Java that simulates real-world ATM operations. Integrated MySQL using JDBC for secure database connectivity and implemented deposits, withdrawals, balance inquiry, mini statements, PIN management and fast cash transactions.",
+
+        tech: [
+            "Java",
+            "Swing",
+            "JDBC",
+            "MySQL",
+            "OOP"
+        ],
+
+        features: [
+            "Secure Login",
+            "Deposit & Withdraw",
+            "Balance Inquiry",
+            "Mini Statement",
+            "PIN Change",
+            "Fast Cash"
+        ],
+
+        buttons: [
+            {
+                text: "GitHub",
+                icon: "fa-github",
+                class: "github",
+                link: "https://github.com/Lucifer230101/ATMSimulator"
+            }
+        ]
+    }
 ];
 
-function initializeProjects(){
+function initializeProjects() {
 
-    const track=document.getElementById("sliderTrack");
+    const track = document.getElementById("sliderTrack");
 
-    const indicators=document.getElementById("carouselIndicators");
+    const indicators = document.getElementById("carouselIndicators");
 
-    let current=0;
+    let current = 0;
 
-    track.innerHTML="";
+    track.innerHTML = "";
 
-    indicators.innerHTML="";
+    indicators.innerHTML = "";
 
-    projects.forEach((project,index)=>{
+    projects.forEach((project, index) => {
 
-        track.innerHTML+=`
+        const leftSection = project.layout === "code"
 
-<div class="project-slide">
+            ? `
+
+<div class="code-project-card">
+
+    <div class="code-header">
+
+        <span class="dot red"></span>
+
+        <span class="dot yellow"></span>
+
+        <span class="dot green"></span>
+
+        <span class="code-title">
+
+            ${project.title}.java
+
+        </span>
+
+    </div>
+
+    <div class="code-body">
+
+<pre>
+
+class ${project.title.replace(/[^a-zA-Z0-9]/g, "")} {
+
+${(project.features || [])
+    .map(feature => `✓ ${feature}`)
+    .join("\n")}
+
+}
+
+</pre>
+
+    </div>
+
+    <div class="language-tags">
+
+        ${project.tech.map(t => `<span>${t}</span>`).join("")}
+
+    </div>
+
+</div>
+
+`
+
+            :
+
+            `
 
 <div class="laptop-container">
 
@@ -106,31 +194,39 @@ function initializeProjects(){
 
 </div>
 
-<div class="project-info">
+`;
+        track.innerHTML += `
 
-<span class="project-category">
+<div class="project-slide">
 
-${project.category}
+    ${leftSection}
 
-</span>
+    <div class="project-info">
 
-<h3>${project.title}</h3>
+        <span class="project-category">
 
-<p>${project.description}</p>
+            ${project.category}
 
-<div class="tech-stack">
+        </span>
 
-${project.tech.map(t=>`<span>${t}</span>`).join("")}
+        <h3>${project.title}</h3>
 
-</div>
+        <p>${project.description}</p>
 
-<div class="project-buttons">
+        <div class="tech-stack">
 
-${project.buttons.map(btn=>{
+            ${project.tech.map(t => `<span>${t}</span>`).join("")}
 
-if(btn.class==="disabled"){
+        </div>
 
-return`
+        <div class="project-buttons">
+
+
+${project.buttons.map(btn => {
+
+            if (btn.class === "disabled") {
+
+                return `
 
 <a class="project-btn disabled">
 
@@ -138,11 +234,13 @@ return`
 
 ${btn.text}
 
-</a>`;
+</a>
 
-}
+`;
 
-return`
+            }
+
+            return `
 
 <a href="${btn.link}"
 
@@ -156,57 +254,60 @@ class="project-btn ${btn.class}">
 
 ${btn.text}
 
-</a>`;
+</a>
 
-}).join("")}
+`;
 
-</div>
+        }).join("")}
 
-</div>
+
+        </div>
+
+    </div>
 
 </div>
 
 `;
 
-        indicators.innerHTML+=`<span class="indicator ${index==0?"active":""}"></span>`;
+        indicators.innerHTML += `<span class="indicator ${index == 0 ? "active" : ""}"></span>`;
 
     });
 
-    const slides=document.querySelectorAll(".project-slide");
+    const slides = document.querySelectorAll(".project-slide");
 
-    const dots=document.querySelectorAll(".indicator");
+    const dots = document.querySelectorAll(".indicator");
 
-    function update(){
+    function update() {
 
-        track.style.transform=`translateX(-${current*100}%)`;
+        track.style.transform = `translateX(-${current * 100}%)`;
 
-        dots.forEach(d=>d.classList.remove("active"));
+        dots.forEach(d => d.classList.remove("active"));
 
         dots[current].classList.add("active");
 
     }
 
-    document.querySelector(".next").onclick=()=>{
+    document.querySelector(".next").onclick = () => {
 
-        current=(current+1)%slides.length;
-
-        update();
-
-    };
-
-    document.querySelector(".prev").onclick=()=>{
-
-        current=(current-1+slides.length)%slides.length;
+        current = (current + 1) % slides.length;
 
         update();
 
     };
 
-    dots.forEach((dot,index)=>{
+    document.querySelector(".prev").onclick = () => {
 
-        dot.onclick=()=>{
+        current = (current - 1 + slides.length) % slides.length;
 
-            current=index;
+        update();
+
+    };
+
+    dots.forEach((dot, index) => {
+
+        dot.onclick = () => {
+
+            current = index;
 
             update();
 
