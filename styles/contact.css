@@ -2,6 +2,12 @@
    CONTACT SECTION
 =========================== */
 
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
 .contact-section{
     padding:40px 8%;
     background:#ffffff;
@@ -36,6 +42,8 @@
 =========================== */
 
 .contact-wrapper{
+
+    width:100%;
 
     display:grid;
 
@@ -82,6 +90,8 @@
 }
 
 .contact-card{
+
+    min-width:0;
 
     background:#ffffff;
 
@@ -144,6 +154,10 @@
     color:white;
 }
 
+.contact-info{
+    min-width:0;
+}
+
 .contact-info h4{
 
     color:#111827;
@@ -159,7 +173,8 @@
 
     font-size:.95rem;
 
-    word-break:break-word;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 /* ===========================
@@ -184,6 +199,8 @@
     max-width:430px;
 
     background:white;
+     
+    box-sizing:border-box;
 
     border-radius:28px;
 
@@ -263,6 +280,10 @@
 
 .contact-btn{
 
+    width:100%;
+
+    box-sizing:border-box;
+    
     display:flex;
 
     justify-content:center;
@@ -326,6 +347,8 @@
 
     justify-content:center;
 
+    flex-wrap:wrap;
+
     gap:18px;
 }
 
@@ -385,6 +408,11 @@
     transform:translateY(0);
 }
 
+.contact-left,
+.contact-right{
+    min-width: 0;
+}
+
 /* ===========================
    RESPONSIVE
 =========================== */
@@ -428,4 +456,10 @@
         gap:14px;
     }
 
+}
+
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
 }
