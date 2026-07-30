@@ -6,6 +6,7 @@ async function loadSection(id, file) {
 
 async function init() {
     await loadSection("navbar", "components/navbar.html");
+    initializeNavbar();
     await loadSection("profile", "components/profile.html");
     loadExperience();
     await loadSection("skillsets", "components/skillsets.html");
